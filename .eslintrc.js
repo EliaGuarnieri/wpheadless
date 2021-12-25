@@ -28,5 +28,6 @@ module.exports = {
     'react/prop-types': 'off',
     'react/react-in-jsx-scope': 'off',
     '@next/next/no-img-element': 'off',
+    'no-unsafe-optional-chaining': 'off'
   }
 }
