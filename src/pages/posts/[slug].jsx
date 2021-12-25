@@ -4,8 +4,6 @@ import Image from 'next/image';
 import { getPostBySlug, getAllPosts, getRelatedPosts, postPathBySlug } from 'lib/posts';
 import { formatDate } from 'lib/datetime';
 
-import styles from 'styles/pages/Post.module.scss';
-
 export default function Post({ post, relatedPosts }) {
   const {
     title,
@@ -34,9 +32,9 @@ export default function Post({ post, relatedPosts }) {
 
       ${content}
 
-          <p className={styles.postModified}>Last updated on {formatDate(modified)}.</p>
+          <p>Last updated on {formatDate(modified)}.</p>
           {!!relatedPostsList.length && (
-            <div className={styles.relatedPosts}>
+            <div>
               {relatedPostsTitle.name ? (
                 <span>
                   More from{' '}
