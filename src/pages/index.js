@@ -5,7 +5,7 @@ export default function Home() {
     <>
     <h1>Welcome! to Hello world</h1>
     <p>Go to <Link href={{
-      pathname: 'posts/page/[page]',
+      pathname: '/posts/page/[page]',
       query: { page: 1}
     }}><a>Blog</a></Link></p>
     </>
