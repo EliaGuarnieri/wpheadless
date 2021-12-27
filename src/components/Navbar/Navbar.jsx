@@ -1,5 +1,6 @@
 import Link from 'next/link'
 import NavbarListItem from './NavbarListItem';
+import Container from 'components/Container';
 
 import styles from './Navbar.module.scss'
 
@@ -11,24 +12,28 @@ const menu = [
 const Navbar = () => {
 
   return (
-    <nav className={styles.navbar}>
-      <p className={styles.navbar__logo}>
-        <Link href='/'>
-          <a>TASD</a>
-        </Link>
-      </p>
-      <ul className={styles.navbar__list}>
-        { menu && menu.map((item, index) => {
-          return (
-            <NavbarListItem
-              key={index}
-              className={styles.navbar__listItem}
-              item={item}
-            />
-          )
-        })}
-      </ul>
-    </nav>
+    <header>
+      <Container>
+        <nav className={styles.navbar}>
+          <p className={styles.navbar__logo}>
+            <Link href='/'>
+              <a>TASD</a>
+            </Link>
+          </p>
+          <ul className={styles.navbar__list}>
+            { menu && menu.map((item, index) => {
+              return (
+                <NavbarListItem
+                  key={index}
+                  className={styles.navbar__listItem}
+                  item={item}
+                />
+              )
+            })}
+          </ul>
+        </nav>
+      </Container>
+    </header>
   )
 }
 
