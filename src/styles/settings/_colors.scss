@@ -1,3 +1,23 @@
-$color-primary: #6667ab;
-// $color-primary-dark: scale($color-primary, $lightness: -50%);
-// $color-primary-light: scale($color-primary, $lightness: 50%);
+$color-gray-50: hsl(239, 17%, 94%);
+$color-gray-100: hsl(239, 19%, 84%);
+$color-gray-200: hsl(239, 19%, 74%);
+$color-gray-300: hsl(239, 19%, 64%);
+$color-gray-400: hsl(239, 18%, 54%);
+$color-gray-500: hsl(239, 19%, 44%);
+$color-gray-600: hsl(239, 19%, 34%);
+$color-gray-700: hsl(239, 18%, 25%);
+$color-gray-800: hsl(239, 18%, 14%);
+$color-gray-900: hsl(239, 18%, 4%);
+
+$color-violet-50: hsl(239, 29%, 94%);
+$color-violet-100: hsl(239, 29%, 84%);
+$color-violet-200: hsl(239, 29%, 74%);
+$color-violet-300: hsl(239, 29%, 64%);
+$color-violet-400: hsl(239, 29%, 54%);
+$color-violet-500: hsl(239, 29%, 44%);
+$color-violet-600: hsl(239, 29%, 34%);
+$color-violet-700: hsl(239, 29%, 25%);
+$color-violet-800: hsl(239, 29%, 14%);
+$color-violet-900: hsl(239, 29%, 4%);
+
+$color-primary: $color-violet-400
