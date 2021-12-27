@@ -9,7 +9,7 @@ const Footer = () => {
         href="https://github.com/EliaGuarnieri?tab=repositories"
         rel="noreferrer"
         target="_blank"
-      >Elia Guarnieri</a>
+      > Elia Guarnieri</a>
     </p>
     </footer>
   )
