@@ -32,21 +32,9 @@ export const QUERY_ALL_USERS_SEO = gql`
         node {
           id
           seo {
-            metaDesc
             metaRobotsNofollow
             metaRobotsNoindex
             title
-            social {
-              youTube
-              wikipedia
-              twitter
-              soundCloud
-              pinterest
-              mySpace
-              linkedIn
-              instagram
-              facebook
-            }
           }
         }
       }
