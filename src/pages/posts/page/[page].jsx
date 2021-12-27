@@ -1,12 +1,12 @@
 import { getAllPosts, getPagesCount, getPaginatedPosts } from 'lib/posts';
 
+import Container from 'components/Container';
 import Pagination from 'components/Pagination';
 
 export default function Posts({ posts, pagination }) {
 
-
   return (
-    <>
+    <Container>
     <ul>
       {posts.map((post) => {
         return (
@@ -24,7 +24,7 @@ export default function Posts({ posts, pagination }) {
         basePath={pagination?.basePath}
       />
     )}
-    </>
+    </Container>
   )
 }
 
