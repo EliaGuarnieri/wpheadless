@@ -1,4 +1,5 @@
 import { getAllPosts, getPagesCount, getPaginatedPosts } from 'lib/posts';
+
 import Pagination from 'components/Pagination';
 
 export default function Posts({ posts, pagination }) {
