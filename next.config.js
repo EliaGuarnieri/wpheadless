@@ -4,6 +4,6 @@ module.exports = {
   },
 
   images: {
-    domains: ['headlesswp.altervista.org', 'secure.gravatar.com']
+    domains: ['headlesswp.altervista.org', 'secure.gravatar.com', 'via.placeholder.com']
   }
 }

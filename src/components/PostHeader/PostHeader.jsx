@@ -28,16 +28,26 @@ const PostHeader = ({ post, options = {} }) => {
       <div className={styles.header__back}>
         <GoBack />
       </div>
-        <div className={styles.header__featuredImage}>
-          <Image
-            src={featuredImage.sourceUrl}
-            alt={featuredImage.altText}
-            layout='responsive'
-            width={976}
-            height={549}
-            priority
-          />
-        </div>
+          <div className={styles.header__featuredImage}>
+            {featuredImage ? (
+              <Image
+                src={featuredImage.sourceUrl}
+                alt={featuredImage.altText}
+                layout='responsive'
+                width={976}
+                height={549}
+                priority
+              />
+            ) : (
+              <Image
+                src="https://via.placeholder.com/976x549"
+                layout='responsive'
+                width={976}
+                height={549}
+                priority
+              />
+            )}
+          </div>
       <div className={styles.header__text}>
         <Container>
           <h1>{title}</h1>
