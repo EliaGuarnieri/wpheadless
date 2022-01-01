@@ -1,0 +1,25 @@
+.header {
+  position: relative;
+
+  &__back {
+    position: absolute;
+    top: 0;
+    background-color: #fff;
+    z-index: 1;
+  }
+
+  &__featuredImage {
+    min-height: 400px;
+  }
+
+  &__text {
+    position: absolute;
+    width: 100%;
+    max-width: calc(976px + 1rem);
+    margin: 0 auto;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #fff;
+  }
+}
