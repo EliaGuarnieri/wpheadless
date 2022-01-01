@@ -7,7 +7,7 @@ import Container from 'components/Container';
 import styles from 'styles/Pages/Single.module.scss'
 
 export default function Post({ post, options = {} }) {
-  const { content, modified, categories } = post;
+  const { content, modified /*, categories */ } = post;
 
   return (
     <>
