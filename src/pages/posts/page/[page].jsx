@@ -1,17 +1,20 @@
 import { getAllPosts, getPagesCount, getPaginatedPosts } from 'lib/posts';
 
 import Container from 'components/Container';
+import PostCard from 'components/PostCard';
 import Pagination from 'components/Pagination';
+
+import styles from 'styles/Pages/Blog.module.scss'
 
 export default function Posts({ posts, pagination }) {
 
   return (
     <Container>
-    <ul>
+    <ul className={styles.posts}>
       {posts.map((post) => {
         return (
           <li key={post.slug}>
-            {post.title}
+            <PostCard post={post} />
           </li>
         );
       })}
