@@ -1,50 +1,17 @@
 import { getPostBySlug, getAllPosts } from 'lib/posts';
 import { formatDate } from 'lib/datetime';
 
-import Image from 'next/image';
+import PostHeader from 'components/PostHeader';
 import Container from 'components/Container';
-import Metadata from 'components/Metadata';
 
 import styles from 'styles/Pages/Single.module.scss'
 
 export default function Post({ post, options = {} }) {
-  const { featuredImage, title, date, author, content, modified, categories } = post;
-  const { excludeMetadata = [] } = options;
-
-  const metadata = {};
-
-  if (!excludeMetadata.includes('author')) {
-    metadata.author = author;
-  }
-
-  if (!excludeMetadata.includes('date')) {
-    metadata.date = date;
-  }
-
-  if (!excludeMetadata.includes('categories')) {
-    metadata.categories = categories;
-  }
-
+  const { content, modified, categories } = post;
 
   return (
     <>
-      <header className={styles.header}>
-        {featuredImage && (
-          <Image
-            className={styles.featuredImage}
-            src={featuredImage.sourceUrl}
-            alt={featuredImage.caption}
-            layout='responsive'
-            width={976}
-            height={549}
-            priority
-          />
-        )}
-        <Container className={styles.header__text}>
-          <h1>{title}</h1>
-          <Metadata {...metadata} />
-        </Container>
-      </header>
+      <PostHeader post={post} options={options} />
       <Container>
         <section className={styles.content} dangerouslySetInnerHTML={{__html: content}} />
 
