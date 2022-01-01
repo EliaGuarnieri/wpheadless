@@ -12,7 +12,7 @@ const menu = [
 const Navbar = () => {
 
   return (
-    <header>
+    <header className={styles.navbar__container}>
       <Container>
         <nav className={styles.navbar}>
           <p className={styles.navbar__logo}>
