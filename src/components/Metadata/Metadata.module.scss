@@ -1,0 +1,75 @@
+@import "styles/settings/__settings";
+
+.metadata {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  color: $color-gray-600;
+  list-style: none;
+  padding: 0;
+  margin: -0.8em -0.8em 0.4em;
+
+  ul {
+    padding: 0;
+    margin: 0;
+  }
+
+  &>li {
+    margin: 0.8em;
+  }
+
+  p {
+    margin: 0;
+  }
+}
+
+.metadataAuthor {
+  a {
+    margin-left: 0.2em;
+  }
+
+  address {
+    display: flex;
+    align-items: center;
+    font-style: normal;
+  }
+
+  .avatar {
+    width: 1.8em;
+    height: 1.8em;
+    border-radius: 50%;
+    margin-right: 0.5em;
+    overflow: hidden;
+  }
+}
+
+.metadataCategories {
+  margin: 0.8rem 0;
+
+  li {
+    display: inline-block;
+  }
+
+  li+li {
+    margin-left: .8rem;
+  }
+
+  a {
+    display: inline-block;
+    text-decoration: none;
+    cursor: pointer;
+    border: 1px solid $color-gray-200;
+    border-radius: 0.4em;
+    padding: 0.2em 0.8em;
+
+    &:hover {
+      color: $color-primary;
+      background-color: $color-gray-50;
+    }
+  }
+}
+
+.metadataSticky {
+  font-size: 1.15em;
+  color: $color-gray-300;
+}
