@@ -197,12 +197,19 @@ export async function getRecentPosts({ count }) {
  * sanitizeExcerpt
  */
 
-export function sanitizeExcerpt(excerpt) {
+export function sanitizeExcerpt(excerpt, maxLength = 400) {
   if (typeof excerpt !== 'string') {
     throw new Error(`Failed to sanitize excerpt: invalid type ${typeof excerpt}`);
   }
 
   let sanitized = excerpt;
+
+  const ellipsis = '[&hellip;]'
+
+  // Trim to maxLength if longer
+  if(sanitized.length > maxLength) {
+    sanitized = sanitized.substring(0, maxLength) + ellipsis
+  }
 
   // If the theme includes [...] as the more indication, clean it up to just ...
 
