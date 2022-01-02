@@ -13,6 +13,7 @@ const Transition = ({children, location}) => {
           enter: TIMOUT,
           exit: TIMOUT
         }}
+        unmountOnExit
       >
         {status => (
           <div className={styles[status]}>
