@@ -1,3 +1,5 @@
+import { shimmer, toBase64 } from 'lib/util'
+
 import Image from 'next/image'
 import GoBack from 'components/GoBack'
 import Container from 'components/Container'
@@ -36,6 +38,8 @@ const PostHeader = ({ post, options = {} }) => {
                 layout='responsive'
                 width={976}
                 height={549}
+                placeholder="blur"
+                blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(976, 549))}`}
                 priority
               />
             ) : (
