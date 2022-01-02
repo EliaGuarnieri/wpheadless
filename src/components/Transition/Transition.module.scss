@@ -2,17 +2,20 @@
   position: relative;
 }
 
-.entering {
-  position: absolute;
+.page-enter {
   opacity: 0;
 }
 
-.entered {
-  transition: opacity 200ms ease-in-out;
+.page-enter-active {
+  opacity: 1;
+  transition: opacity 400ms;
+}
+
+.page-exit {
   opacity: 1;
 }
 
-.exiting {
-  transition: opacity 200ms ease-in-out;
+.page-exit-active {
   opacity: 0;
+  transition: opacity 400ms;
 }

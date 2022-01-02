@@ -1,25 +1,23 @@
-import { TransitionGroup, Transition as ReactTransition } from 'react-transition-group'
+import { TransitionGroup, CSSTransition as ReactTransition } from 'react-transition-group'
 
 import styles from './Transition.module.scss'
-
-const TIMOUT = 200
 
 const Transition = ({children, location}) => {
   return (
     <TransitionGroup className={styles.transitionGroup}>
       <ReactTransition
         key={location}
-        timeout={{
-          enter: TIMOUT,
-          exit: TIMOUT
+        timeout={400}
+        classNames={{
+          enter: styles['page-enter'],
+          enterActive: styles['page-enter-active'],
+          exit: styles['page-exit'],
+          exitActive: styles['page-exit-active']
         }}
-        unmountOnExit
       >
-        {status => (
-          <div className={styles[status]}>
-            {children}
-          </div>
-        )}
+        <div>
+          {children}
+        </div>
       </ReactTransition>
     </TransitionGroup>
   )
