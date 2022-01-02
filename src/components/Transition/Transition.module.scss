@@ -2,20 +2,17 @@
   position: relative;
 }
 
-.page-enter {
-  opacity: 0;
+.entering {
+  position: absolute;
+  transform: translateX(50px);
 }
 
-.page-enter-active {
-  opacity: 1;
-  transition: opacity 400ms;
+.entered {
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+  transform: translateX(0);
 }
 
-.page-exit {
-  opacity: 1;
-}
-
-.page-exit-active {
-  opacity: 0;
-  transition: opacity 400ms;
+.exiting {
+  transition: opacity 200ms ease-in-out, transform 200ms ease-in-out;
+  transform: translateX(-50px);
 }

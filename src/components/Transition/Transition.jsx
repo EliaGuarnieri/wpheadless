@@ -1,25 +1,24 @@
-import { TransitionGroup, CSSTransition as ReactTransition } from 'react-transition-group'
+import { motion } from "framer-motion";
 
-import styles from './Transition.module.scss'
+//import styles from './Transition.module.scss'
 
 const Transition = ({children, location}) => {
   return (
-    <TransitionGroup className={styles.transitionGroup}>
-      <ReactTransition
-        key={location}
-        timeout={400}
-        classNames={{
-          enter: styles['page-enter'],
-          enterActive: styles['page-enter-active'],
-          exit: styles['page-exit'],
-          exitActive: styles['page-exit-active']
-        }}
-      >
-        <div>
-          {children}
-        </div>
-      </ReactTransition>
-    </TransitionGroup>
+    <motion.div
+      key={location}
+      initial="initial"
+      animate="animate"
+      variants={{
+        initial: {
+          opacity: 0,
+        },
+        animate: {
+          opacity: 1,
+        },
+      }}
+    >
+      {children}
+    </motion.div>
   )
 }
 
