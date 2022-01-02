@@ -3,6 +3,7 @@ import { formatDate } from 'lib/datetime';
 
 import PostHeader from 'components/PostHeader';
 import Container from 'components/Container';
+import Main from 'components/Main';
 
 import styles from 'styles/Pages/Single.module.scss'
 
@@ -13,7 +14,7 @@ export default function Post({ post, options = {} }) {
     <>
       <PostHeader post={post} options={options} />
       <Container>
-        <section className={styles.content} dangerouslySetInnerHTML={{__html: content}} />
+        <Main className={styles.content} content={content} />
 
         <p>Last updated on {formatDate(modified)}.</p>
       </Container>
