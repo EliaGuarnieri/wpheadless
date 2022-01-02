@@ -1,7 +1,5 @@
-import styles from './Main.module.scss'
-
-const Main = ({ children }) => {
-  return <main className={styles.main}>{children}</main>
+const Main = ({ className, content }) => {
+  return <main className={className} dangerouslySetInnerHTML={{__html: content}} />
 }
 
 export default Main
