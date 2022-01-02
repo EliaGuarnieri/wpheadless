@@ -1,33 +1,19 @@
 import { getAllPosts, getPagesCount, getPaginatedPosts } from 'lib/posts';
 
 import Container from 'components/Container';
-import PostCard from 'components/PostCard';
-import Pagination from 'components/Pagination';
+import TemplateArchive from 'Templates/Archive';
 
-import styles from 'styles/Pages/Blog.module.scss'
+//import styles from 'styles/Pages/Blog.module.scss'
 
-export default function Posts({ posts, pagination }) {
+function Blog({ posts, pagination }) {
 
   return (
+    <>
     <Container>
-    <ul className={styles.posts}>
-      {posts.map((post) => {
-        return (
-          <li key={post.slug}>
-            <PostCard post={post} />
-          </li>
-        );
-      })}
-    </ul>
-    {pagination && (
-      <Pagination
-        addCanonical={false}
-        currentPage={pagination?.currentPage}
-        pagesCount={pagination?.pagesCount}
-        basePath={pagination?.basePath}
-      />
-    )}
+      <h1>Blog</h1>
     </Container>
+    <TemplateArchive posts={posts} pagination={pagination} />
+    </>
   )
 }
 
@@ -55,3 +41,5 @@ export async function getStaticPaths() {
     fallback: false,
   };
 }
+
+export default Blog
