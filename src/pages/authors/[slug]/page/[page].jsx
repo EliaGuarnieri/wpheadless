@@ -4,16 +4,14 @@ import { getPostsByAuthorSlug, getPaginatedPosts, getPagesCount } from 'lib/post
 import Container from 'components/Container';
 import TemplateArchive from 'Templates/Archive';
 
-//import styles from 'styles/Pages/Blog.module.scss'
-
 function AuthorPosts({ posts, user, pagination }) {
 
   return (
     <>
-    <Container>
-      <h1>Post by {user.name}</h1>
-    </Container>
-    <TemplateArchive posts={posts} pagination={pagination}/>
+      <Container>
+        <h1>Post by {user.name}</h1>
+      </Container>
+      <TemplateArchive posts={posts} pagination={pagination}/>
     </>
   )
 }
