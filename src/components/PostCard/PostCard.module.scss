@@ -1,56 +1,69 @@
 @import "styles/settings/__settings";
 
 .postCard {
-  position: relative;
-  padding: 1.2em 0;
-  color: inherit;
-  text-align: left;
-  text-decoration: none;
-  border-bottom: 1px solid $color-primary;
+  display: grid;
+  gap: 4rem;
+  background-color: $color-gray-0;
+  padding: 2rem;
+  border-radius: $border-radius;
+  text-align: center;
 
-  &>a {
-    display: block;
-    color: inherit;
-    text-decoration: none;
+  &__media {
+    width: 100%;
+    height: auto;
+    border-radius: calc($border-radius / 2);
+  }
 
-    &:hover {
-      h3 {
-        color: $color-primary;
-        text-decoration: underline;
-      }
+  &__content {
+
+    @media (min-width: 992px) {
+      display: flex;
+      flex-flow: column;
+      justify-content: space-between;
     }
   }
-}
 
-.postCardSticky {
-  border: solid 0.02em $color-gray-100;
-  border-radius: 1em;
+  &__categories {
+    display: flex;
+    justify-content: center;
 
-  svg {
-    position: absolute;
-    top: 1.2em;
-    right: 1em;
-    font-size: 1.15em;
-    color: $color-gray-300;
+    @media (min-width: 992px) {
+      justify-content: start;
+    }
   }
-}
 
-.postCardTitle {
-  margin: 0 0 1em 0;
-  font-size: 1.5em;
-}
+  &__excerpt {
+    padding: 0 1rem;
+    margin: 0 auto;
 
-.postCardContent {
-  font-size: 1.25em;
-  margin: 0;
+    @media (min-width: 992px) {
+      padding: 0;
+    }
+  }
 
-  p {
-    &:first-child {
+  &__author {
+    display: flex;
+    justify-content: center;
+
+    @media (min-width: 992px) {
+      justify-content: start;
+    }
+  }
+
+  &__footer {
+    display: flex;
+    justify-content: center;
+    margin-top: 3rem;
+
+    @media (min-width: 992px) {
       margin-top: 0;
+      margin-left: -.2rem;
+      justify-content: end;
     }
+  }
 
-    &:last-child {
-      margin-bottom: 0;
-    }
+  @media (min-width: 992px) {
+    display: flex;
+    text-align: left;
   }
 }
