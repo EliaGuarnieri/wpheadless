@@ -197,7 +197,7 @@ export async function getRecentPosts({ count }) {
  * sanitizeExcerpt
  */
 
-export function sanitizeExcerpt(excerpt, maxLength = 400) {
+export function sanitizeExcerpt(excerpt, maxLength = 200) {
   if (typeof excerpt !== 'string') {
     throw new Error(`Failed to sanitize excerpt: invalid type ${typeof excerpt}`);
   }
