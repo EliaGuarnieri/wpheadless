@@ -18,7 +18,8 @@ function Blog({ posts, pagination }) {
 }
 
 export async function getStaticProps({ params = {} } = {}) {
-  const { posts, pagination } = await getPaginatedPosts(params?.page);
+  const allPosts = await getAllPosts();
+  const { posts, pagination } = await getPaginatedPosts(allPosts.posts, params?.page);
   return {
     props: {
       posts,
