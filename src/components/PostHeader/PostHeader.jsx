@@ -1,9 +1,7 @@
-import { shimmer, toBase64 } from 'lib/util'
-
-import Image from 'next/image'
 import GoBack from 'components/GoBack'
 import Container from 'components/Container'
 import Metadata from 'components/Metadata'
+import FeaturedImage from 'components/FeaturedImage'
 
 import styles from './PostHeader.module.scss'
 
@@ -30,28 +28,14 @@ const PostHeader = ({ post, options = {} }) => {
       <div className={styles.header__back}>
         <GoBack />
       </div>
-          <div className={styles.header__featuredImage}>
-            {featuredImage ? (
-              <Image
-                src={featuredImage.sourceUrl}
-                alt={featuredImage.altText}
-                layout='responsive'
-                width={976}
-                height={549}
-                placeholder="blur"
-                blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(976, 549))}`}
-                priority
-              />
-            ) : (
-              <Image
-                src="https://via.placeholder.com/976x549"
-                layout='responsive'
-                width={976}
-                height={549}
-                priority
-              />
-            )}
-          </div>
+      <FeaturedImage
+        className={styles.header__featuredImage}
+        src={featuredImage?.sourceUrl}
+        alt={featuredImage?.altText}
+        layout='responsive'
+        width={976}
+        height={549}
+      />
       <div className={styles.header__text}>
         <Container>
           <h1>{title}</h1>
