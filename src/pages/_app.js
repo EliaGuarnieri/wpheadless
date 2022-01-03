@@ -16,7 +16,6 @@ function MyApp({ Component, pageProps }) {
       // https://github.com/vercel/next.js/issues/17464
 
       const tempFix = () => {
-        console.log('tempFix')
         const allStyleElems = document.querySelectorAll('style[media="x"]');
         allStyleElems.forEach((elem) => {
           elem.removeAttribute("media");
