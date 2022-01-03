@@ -14,7 +14,7 @@
     font-size: 1em;
   }
 
-  a {
+  .link, a {
     color: $color-gray-800;
     text-decoration: none;
     cursor: pointer;
@@ -56,6 +56,10 @@
 
 .prev {
   margin-right: auto;
+}
+
+.next {
+  margin-left: auto;
 }
 
 .dots {

@@ -67,7 +67,7 @@ const Pagination = ({ pagesCount, currentPage, basePath }) => {
             ) : (
               <li key={page}>
                 <Link href={`${path}${page}`}>
-                  <a aria-label={`Goto Page ${page}`}>
+                  <a className={styles.link} aria-label={`Goto Page ${page}`}>
                     <span>{page}</span>
                   </a>
                 </Link>
