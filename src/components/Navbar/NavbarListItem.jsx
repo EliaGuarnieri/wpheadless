@@ -2,10 +2,10 @@ import Link from 'next/link'
 
 const NavbarListItem = ({ className, item }) => {
   return (
-    <li className={ className }>
+    <li>
       {item.path && (
         <Link href={item.path}>
-          <a>{ item.name }</a>
+          <a className={ className }>{ item.name }</a>
         </Link>
       )}
     </li>

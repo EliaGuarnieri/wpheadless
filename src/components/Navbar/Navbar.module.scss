@@ -9,10 +9,6 @@
   padding-top: 0;
   padding-bottom: 0;
 
-  &__container {
-    position: sticky;
-  }
-
   &__logo {
     font-weight: 700;
   }
@@ -24,7 +20,7 @@
     margin: 0;
   }
 
-  &__listItem a {
+  &__listItem {
     padding: 1rem;
     text-transform: uppercase;
     font-weight: 700;

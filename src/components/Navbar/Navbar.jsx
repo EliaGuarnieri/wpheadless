@@ -15,11 +15,9 @@ const Navbar = () => {
     <header className={styles.navbar__container}>
       <Container>
         <nav className={styles.navbar}>
-          <p className={styles.navbar__logo}>
-            <Link href='/'>
-              <a>TASD</a>
-            </Link>
-          </p>
+          <Link href='/'>
+            <a className={styles.navbar__logo}>TASD</a>
+          </Link>
           <ul className={styles.navbar__list}>
             { menu && menu.map((item, index) => {
               return (
