@@ -1,1 +1,3 @@
-$border-radius-small: 0.2em;
+$border-radius: 1em;
+$border-radius-half: calc($border-radius / 2);
+$border-radius-small: calc($border-radius / 5);
