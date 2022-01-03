@@ -1,0 +1,17 @@
+@import 'styles/settings/__settings';
+
+.button {
+  display: inline-block;
+  color: $color-violet-0;
+  text-decoration: none;
+  background-color: $color-primary;
+  padding: 1em 3em;
+  border-radius: $border-radius;
+  transition: background-color .2s;
+
+  &:hover {
+    color: $color-violet-0;
+    background-color: $color-violet-600;
+    text-decoration: none;
+  }
+}
