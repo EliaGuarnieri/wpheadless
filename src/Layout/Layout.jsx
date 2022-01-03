@@ -13,12 +13,12 @@ const Layout = ({children}) => {
   return (
     <div className={styles.layoutContainer}>
       <Navbar />
-      <Scrollbars>
-        <Transition location={router.asPath}>
+      <Transition location={router.asPath}>
+        <Scrollbars>
           {children}
-        </Transition>
-        <Footer />
-      </Scrollbars>
+          <Footer />
+        </Scrollbars>
+      </Transition>
     </div>
   )
 }
