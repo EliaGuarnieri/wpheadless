@@ -8,9 +8,9 @@ const GoBack = () => {
   const router = useRouter()
 
   return (
-    <a className={styles.back} onClick={() => router.back()}>
+    <span className={styles.back} onClick={() => router.back()}>
       <ArrowLeft/> Back
-    </a>
+    </span>
   )
 
 }

@@ -1,7 +1,15 @@
+@import "styles/settings/__settings";
+
 .back {
   display: flex;
   align-items: center;
   padding: 1rem;
   gap: .5rem;
+  color: $color-primary;
   cursor: pointer;
+
+  &:hover {
+    color: $color-violet-600;
+    text-decoration: underline;
+  }
 }
