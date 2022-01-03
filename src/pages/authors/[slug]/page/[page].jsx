@@ -1,4 +1,4 @@
-import { getAllAuthors, getUserByNameSlug, userSlugByName } from 'lib/users';
+import { getAllAuthors, getUserBySlug } from 'lib/users';
 import { getPostsByAuthorSlug, getPaginatedPosts, getPagesCount } from 'lib/posts';
 
 import Container from 'components/Container';
@@ -17,7 +17,7 @@ function AuthorPosts({ posts, user, pagination }) {
 }
 
 export async function getStaticProps({ params = {} } = {}) {
-  const { user } = await getUserByNameSlug(params?.slug);
+  const { user } = await getUserBySlug(params?.slug);
   const allPosts = await getPostsByAuthorSlug(user?.slug);
   const { posts, pagination } = await getPaginatedPosts(allPosts.posts, params?.page);
   return {
@@ -36,8 +36,7 @@ export async function getStaticPaths() {
   const { authors } = await getAllAuthors();
 
   const paths = await Promise.all(authors.map(async (author) => {
-    const { name } = author;
-    const slug = userSlugByName(name)
+    const { slug } = author;
     const { posts } = await getPostsByAuthorSlug(slug);
     const pagesCount = await getPagesCount(posts);
     return [...new Array(pagesCount)].map((_, i) => {

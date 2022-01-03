@@ -9,7 +9,7 @@ import { QUERY_ALL_USERS, QUERY_ALL_USERS_SEO } from 'data/users';
  */
 
 export function authorPathBySlug(slug) {
-  return `/authors/${slug}`;
+  return `/authors/${slug}/page/1`;
 }
 
 /**

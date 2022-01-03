@@ -2,7 +2,7 @@ import Link from 'next/link';
 import Image from 'next/image'
 
 import { categoryPathBySlug } from 'lib/categories';
-import { authorPathByName } from 'lib/users';
+import { authorPathBySlug } from 'lib/users';
 import { formatDate } from 'lib/datetime';
 
 import { FaMapPin } from 'react-icons/fa';
@@ -27,7 +27,7 @@ const Metadata = ({ author, date, categories, isSticky = false }) => {
               </span>
             )}
             By{' '}
-            <Link href={authorPathByName(author.name)}>
+            <Link href={authorPathBySlug(author.slug)}>
               <a rel="author">{author.name}</a>
             </Link>
           </address>
