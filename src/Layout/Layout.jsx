@@ -2,8 +2,8 @@ import { useRouter } from 'next/router'
 
 import Navbar from 'components/Navbar'
 import Transition from 'components/Transition'
-//import Main from 'components/Main'
 import Footer from 'components/Footer'
+import Scrollbars from 'components/Scrollbars'
 
 import styles from './Layout.module.scss'
 
@@ -13,10 +13,12 @@ const Layout = ({children}) => {
   return (
     <div className={styles.layoutContainer}>
       <Navbar />
-      <Transition location={router.asPath}>
-        {children}
-      </Transition>
-      <Footer />
+      <Scrollbars>
+        <Transition location={router.asPath}>
+          {children}
+        </Transition>
+        <Footer />
+      </Scrollbars>
     </div>
   )
 }
