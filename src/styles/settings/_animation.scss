@@ -1,0 +1,15 @@
+@keyframes pulse {
+  0% {
+    transform: scale(.95);
+  }
+
+  70% {
+    transform: scale(1.2);
+  }
+
+  100% {
+    transform: scale(.95);
+  }
+}
+
+$pulse: pulse 2s infinite;
