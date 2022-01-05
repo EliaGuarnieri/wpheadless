@@ -1,4 +1,22 @@
+@import 'styles/settings/__settings';
+
 .footer {
   display: flex;
   justify-content: center;
+}
+
+.heart {
+  display: inline-flex;
+  position: relative;
+  width: 20px;
+  height: 20px;
+  justify-content: center;
+  align-items: baseline;
+  transform: scale(1);
+  animation: $pulse;
+
+  &::after {
+    content: '❤️';
+    position: absolute;
+  }
 }
