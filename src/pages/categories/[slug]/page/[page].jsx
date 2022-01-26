@@ -9,7 +9,7 @@ function CategoryPosts({ posts, category, pagination }) {
   return (
     <>
       <Container>
-        <h1>Post by {category.name}</h1>
+        <h1>Post of {category.name}</h1>
       </Container>
       <TemplateArchive posts={posts} pagination={pagination}/>
     </>
