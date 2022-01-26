@@ -1,0 +1,18 @@
+@import 'styles/settings/__settings';
+
+.reletedPosts {
+  margin: 4rem 0;
+
+  &__card {
+    display: grid;
+    gap: 2rem;
+    background-color: $color-gray-0;
+    padding: 2rem;
+    border-radius: $border-radius;
+  }
+
+  &__featuredImage {
+    border-radius: $border-radius-half;
+    cursor: pointer;
+  }
+}
