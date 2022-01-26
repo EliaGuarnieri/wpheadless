@@ -1,5 +1,4 @@
 import { getPostBySlug, getAllPosts, getRelatedPosts } from 'lib/posts';
-import { categoryPathBySlug } from 'lib/categories';
 import { formatDate } from 'lib/datetime';
 
 import PostHeader from 'components/PostHeader';
