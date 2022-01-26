@@ -7,12 +7,12 @@ import Main from 'components/Main';
 
 import styles from 'styles/Pages/Single.module.scss'
 
-export default function Post({ post, options = {} }) {
-  const { content, modified /*, categories */ } = post;
+export default function Post({ post }) {
+  const { content, modified } = post;
 
   return (
     <>
-      <PostHeader post={post} options={options} />
+      <PostHeader post={post} />
       <Container>
         <Main className={styles.content} content={content} />
 

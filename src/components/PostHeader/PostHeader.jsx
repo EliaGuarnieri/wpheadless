@@ -5,22 +5,12 @@ import FeaturedImage from 'components/FeaturedImage'
 
 import styles from './PostHeader.module.scss'
 
-const PostHeader = ({ post, options = {} }) => {
+const PostHeader = ({ post }) => {
   const { featuredImage, title, date, author, categories } = post
-  const { excludeMetadata = [] } = options;
-
-  const metadata = {};
-
-  if (!excludeMetadata.includes('author')) {
-    metadata.author = author;
-  }
-
-  if (!excludeMetadata.includes('date')) {
-    metadata.date = date;
-  }
-
-  if (!excludeMetadata.includes('categories')) {
-    metadata.categories = categories;
+  const metadata = {
+    author: author,
+    date: date,
+    categories: categories
   }
 
   return (
