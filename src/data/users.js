@@ -24,20 +24,3 @@ export const QUERY_ALL_USERS = gql`
     }
   }
 `;
-
-export const QUERY_ALL_USERS_SEO = gql`
-  {
-    users(first: 10000) {
-      edges {
-        node {
-          id
-          seo {
-            metaRobotsNofollow
-            metaRobotsNoindex
-            title
-          }
-        }
-      }
-    }
-  }
-`;
