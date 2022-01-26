@@ -1,6 +1,5 @@
 import { getApolloClient } from 'lib/apollo-client';
 
-import { updateUserAvatar } from 'lib/users';
 import { sortObjectsByDate } from 'lib/datetime';
 
 import {
@@ -8,7 +7,6 @@ import {
   QUERY_POST_BY_SLUG,
   QUERY_POSTS_BY_AUTHOR_SLUG,
   QUERY_POSTS_BY_CATEGORY_ID,
-  QUERY_POST_SEO_BY_SLUG,
   QUERY_POST_PER_PAGE,
 } from 'data/posts';
 
@@ -26,10 +24,8 @@ export function postPathBySlug(slug) {
 
 export async function getPostBySlug(slug) {
   const apolloClient = getApolloClient();
-  const apiHost = new URL(process.env.WORDPRESS_GRAPHQL_ENDPOINT).host;
 
   let postData;
-  let seoData;
 
   try {
     postData = await apolloClient.query({
@@ -44,63 +40,6 @@ export async function getPostBySlug(slug) {
   }
 
   const post = [postData?.data.post].map(mapPostData)[0];
-
-  try {
-    seoData = await apolloClient.query({
-      query: QUERY_POST_SEO_BY_SLUG,
-      variables: {
-        slug,
-      },
-    });
-  } catch (e) {
-    console.log(`[posts][getPostBySlug] Failed to query SEO plugin: ${e.message}`);
-    console.log('Is the SEO Plugin installed? If not, disable WORDPRESS_PLUGIN_SEO in next.config.js.');
-    throw e;
-  }
-
-  const { seo = {} } = seoData?.data?.post;
-
-  post.metaTitle = seo.title;
-  post.metaDescription = seo.metaDesc;
-  post.readingTime = seo.readingTime;
-
-  // The SEO plugin by default includes a canonical link, but we don't want to use that
-  // because it includes the WordPress host, not the site host. We manage the canonical
-  // link along with the other metadata, but explicitly check if there's a custom one
-  // in here by looking for the API's host in the provided canonical link
-
-  if (seo.canonical && !seo.canonical.includes(apiHost)) {
-    post.canonical = seo.canonical;
-  }
-
-  post.og = {
-    author: seo.opengraphAuthor,
-    description: seo.opengraphDescription,
-    image: seo.opengraphImage,
-    modifiedTime: seo.opengraphModifiedTime,
-    publishedTime: seo.opengraphPublishedTime,
-    publisher: seo.opengraphPublisher,
-    title: seo.opengraphTitle,
-    type: seo.opengraphType,
-  };
-
-  post.article = {
-    author: post.og.author,
-    modifiedTime: post.og.modifiedTime,
-    publishedTime: post.og.publishedTime,
-    publisher: post.og.publisher,
-  };
-
-  post.robots = {
-    nofollow: seo.metaRobotsNofollow,
-    noindex: seo.metaRobotsNoindex,
-  };
-
-  post.twitter = {
-    description: seo.twitterDescription,
-    image: seo.twitterImage,
-    title: seo.twitterTitle,
-  };
 
   return {
     post,
@@ -182,18 +121,6 @@ export async function getPostsByCategoryId(categoryId) {
 }
 
 /**
- * getRecentPosts
- */
-
-export async function getRecentPosts({ count }) {
-  const { posts } = await getAllPosts();
-  const sorted = sortObjectsByDate(posts);
-  return {
-    posts: sorted.slice(0, count),
-  };
-}
-
-/**
  * sanitizeExcerpt
  */
 
@@ -244,15 +171,6 @@ export function mapPostData(post = {}) {
     };
   }
 
-  // The URL by default that comes from Gravatar / WordPress is not a secure
-  // URL. This ends up redirecting to https, but it gives mixed content warnings
-  // as the HTML shows it as http. Replace the url to avoid those warnings
-  // and provide a secure URL by default
-
-  if (data.author?.avatar) {
-    data.author.avatar = updateUserAvatar(data.author.avatar);
-  }
-
   // Clean up the categories to make them more easy to access
 
   if (data.categories) {
@@ -290,14 +208,6 @@ export async function getRelatedPosts(category, postId, count = 5) {
     return relatedPosts.slice(0, count);
   }
   return relatedPosts;
-}
-
-/**
- * sortStickyPosts
- */
-
-export function sortStickyPosts(posts) {
-  return [...posts].sort((post) => (post.isSticky ? -1 : 1));
 }
 
 /**
@@ -348,9 +258,8 @@ export async function getPaginatedPosts(posts, currentPage = 1) {
     page = 1;
   }
   const offset = postsPerPage * (page - 1);
-  const sortedPosts = sortStickyPosts(posts);
   return {
-    posts: sortedPosts.slice(offset, offset + postsPerPage),
+    posts: posts.slice(offset, offset + postsPerPage),
     pagination: {
       currentPage: page,
       pagesCount,

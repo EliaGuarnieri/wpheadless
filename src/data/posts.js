@@ -45,7 +45,6 @@ export const QUERY_ALL_POSTS = gql`
           databaseId
           title
           slug
-          isSticky
         }
       }
     }
@@ -95,7 +94,6 @@ export const QUERY_POST_BY_SLUG = gql`
       databaseId
       title
       slug
-      isSticky
     }
   }
 `;
@@ -145,7 +143,6 @@ export const QUERY_POSTS_BY_CATEGORY_ID = gql`
           databaseId
           title
           slug
-          isSticky
         }
       }
     }
@@ -184,48 +181,6 @@ export const QUERY_POSTS_BY_AUTHOR_SLUG = gql`
           databaseId
           slug
           title
-          isSticky
-        }
-      }
-    }
-  }
-`;
-
-export const QUERY_POST_SEO_BY_SLUG = gql`
-  query PostSEOBySlug($slug: ID!) {
-    post(id: $slug, idType: SLUG) {
-      id
-      seo {
-        canonical
-        metaDesc
-        metaRobotsNofollow
-        metaRobotsNoindex
-        opengraphAuthor
-        opengraphDescription
-        opengraphModifiedTime
-        opengraphPublishedTime
-        opengraphPublisher
-        opengraphTitle
-        opengraphType
-        readingTime
-        title
-        twitterDescription
-        twitterTitle
-        twitterImage {
-          altText
-          sourceUrl
-          mediaDetails {
-            width
-            height
-          }
-        }
-        opengraphImage {
-          altText
-          sourceUrl
-          mediaDetails {
-            height
-            width
-          }
         }
       }
     }
