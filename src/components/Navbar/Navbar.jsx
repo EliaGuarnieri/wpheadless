@@ -1,6 +1,7 @@
 import Link from 'next/link'
 import NavbarListItem from './NavbarListItem';
 import Container from 'components/Container';
+import Image from 'next/image';
 
 import styles from './Navbar.module.scss'
 
@@ -16,7 +17,15 @@ const Navbar = () => {
       <Container>
         <nav className={styles.navbar}>
           <Link href='/'>
-            <a className={styles.navbar__logo}>TASD</a>
+            <a className={styles.navbar__logo}>
+              <Image
+                src="/image/logo@0,25x.png"
+                width={40}
+                height={40}
+                alt="Logo"
+              />
+              TASD Project
+            </a>
           </Link>
           <ul className={styles.navbar__list}>
             { menu && menu.map((item, index) => {

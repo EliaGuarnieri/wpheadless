@@ -10,7 +10,13 @@
   padding-bottom: 0;
 
   &__logo {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
     font-weight: 700;
+    padding: .8rem;
+    margin-left: -.8rem;
+    line-height: 0;
   }
 
   &__list {
