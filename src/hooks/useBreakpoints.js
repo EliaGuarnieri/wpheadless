@@ -1,3 +1,6 @@
+/**
+ * * This hook returns the breakpoints for responsiveness
+ */
 export const useBreakpoint = () => {
   const breakpoint = {
     sm: 576,
