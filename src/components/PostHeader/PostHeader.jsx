@@ -25,6 +25,7 @@ const PostHeader = ({ post }) => {
         layout='responsive'
         width={976}
         height={549}
+        priority
       />
       <div className={styles.header__text}>
         <Container>

@@ -11,7 +11,6 @@ const FeaturedImage = (props) => {
         src={src}
         placeholder="blur"
         blurDataURL={`data:image/svg+xml;base64,${toBase64(shimmer(976, 549))}`}
-        priority
       />
     </div>
   )
