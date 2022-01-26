@@ -1,5 +1,4 @@
 import { getPostBySlug, getAllPosts, getRelatedPosts } from 'lib/posts';
-import { formatDate } from 'lib/datetime';
 
 import PostHeader from 'components/PostHeader';
 import Container from 'components/Container';
@@ -9,7 +8,7 @@ import RelatedPosts from 'components/RelatedPosts';
 import styles from 'styles/Pages/Single.module.scss'
 
 export default function Post({ post, relatedPosts }) {
-  const { content, modified } = post;
+  const { content } = post;
 
   return (
     <>
@@ -18,8 +17,6 @@ export default function Post({ post, relatedPosts }) {
         <Main className={styles.content} content={content} />
 
         <RelatedPosts posts={relatedPosts} />
-
-        <p>Last updated on {formatDate(modified)}.</p>
       </Container>
     </>
   );
