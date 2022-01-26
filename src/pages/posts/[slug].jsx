@@ -1,13 +1,15 @@
-import { getPostBySlug, getAllPosts } from 'lib/posts';
+import { getPostBySlug, getAllPosts, getRelatedPosts } from 'lib/posts';
+import { categoryPathBySlug } from 'lib/categories';
 import { formatDate } from 'lib/datetime';
 
 import PostHeader from 'components/PostHeader';
 import Container from 'components/Container';
 import Main from 'components/Main';
+import RelatedPosts from 'components/RelatedPosts';
 
 import styles from 'styles/Pages/Single.module.scss'
 
-export default function Post({ post }) {
+export default function Post({ post, relatedPosts }) {
   const { content, modified } = post;
 
   return (
@@ -15,6 +17,8 @@ export default function Post({ post }) {
       <PostHeader post={post} />
       <Container>
         <Main className={styles.content} content={content} />
+
+        <RelatedPosts posts={relatedPosts} />
 
         <p>Last updated on {formatDate(modified)}.</p>
       </Container>
@@ -25,12 +29,14 @@ export default function Post({ post }) {
 export async function getStaticProps({ params = {} } = {}) {
   const { post } = await getPostBySlug(params?.slug);
 
-  const socialImage = `${process.env.OG_IMAGE_DIRECTORY}/${params?.slug}.png`;
+  const { categories, databaseId: postId } = post
+  const category = categories.length && categories[0]
+  const { relatedPosts } = await getRelatedPosts(category, postId)
 
   return {
     props: {
       post,
-      socialImage
+      relatedPosts
     },
   };
 }
