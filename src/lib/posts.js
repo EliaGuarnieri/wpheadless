@@ -205,9 +205,13 @@ export async function getRelatedPosts(category, postId, count = 5) {
   }
 
   if (relatedPosts.length > count) {
-    return relatedPosts.slice(0, count);
+    return {
+      relatedPosts: relatedPosts.slice(0, count)
+    }
   }
-  return relatedPosts;
+  return {
+    relatedPosts
+  }
 }
 
 /**
