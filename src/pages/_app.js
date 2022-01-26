@@ -1,9 +1,10 @@
-import 'normalize.css'
-import '../styles/globals.scss'
-
+import Head from 'next/head';
 import Layout from 'Layout';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react'
+
+import 'normalize.css'
+import '../styles/globals.scss'
 
 function MyApp({ Component, pageProps }) {
   const router = useRouter()
@@ -35,6 +36,9 @@ function MyApp({ Component, pageProps }) {
 
   return (
     <Layout>
+      <Head>
+        <link rel="icon" href="/favicon.png" />
+      </Head>
       <Component {...pageProps} />
     </Layout>
   )
