@@ -1,15 +1,21 @@
 import { getAllCategories, getCategoryBySlug } from 'lib/categories';
 import { getPostsByCategoryId, getPaginatedPosts, getPagesCount } from 'lib/posts';
 
+import Head from 'next/head';
 import Container from 'components/Container';
 import TemplateArchive from 'Templates/Archive';
 
 function CategoryPosts({ posts, category, pagination }) {
 
+  const { name } = category
+
   return (
     <>
+      <Head>
+        <title>{name} - TASD Project</title>
+      </Head>
       <Container>
-        <h1>Post in {category.name}</h1>
+        <h1>Post in {name}</h1>
       </Container>
       <TemplateArchive posts={posts} pagination={pagination}/>
     </>

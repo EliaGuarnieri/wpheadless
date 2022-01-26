@@ -1,15 +1,20 @@
 import { getAllAuthors, getUserBySlug } from 'lib/users';
 import { getPostsByAuthorSlug, getPaginatedPosts, getPagesCount } from 'lib/posts';
 
+import Head from 'next/head';
 import Container from 'components/Container';
 import TemplateArchive from 'Templates/Archive';
 
 function AuthorPosts({ posts, user, pagination }) {
 
+  const { name } = user
   return (
     <>
+      <Head>
+        <title>{name} - TASD Project</title>
+      </Head>
       <Container>
-        <h1>Post by {user.name}</h1>
+        <h1>Post by {name}</h1>
       </Container>
       <TemplateArchive posts={posts} pagination={pagination}/>
     </>

@@ -1,5 +1,6 @@
 import { getPostBySlug, getAllPosts, getRelatedPosts } from 'lib/posts';
 
+import Head from 'next/head';
 import PostHeader from 'components/PostHeader';
 import Container from 'components/Container';
 import Main from 'components/Main';
@@ -8,10 +9,13 @@ import RelatedPosts from 'components/RelatedPosts';
 import styles from 'styles/Pages/Single.module.scss'
 
 export default function Post({ post, relatedPosts }) {
-  const { content } = post;
+  const { title, content } = post;
 
   return (
     <>
+      <Head>
+        <title>{title} - TASD Project</title>
+      </Head>
       <PostHeader post={post} />
       <Container>
         <Main className={styles.content} content={content} />

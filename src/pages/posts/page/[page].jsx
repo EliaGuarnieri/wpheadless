@@ -1,5 +1,6 @@
 import { getAllPosts, getPagesCount, getPaginatedPosts } from 'lib/posts';
 
+import Head from 'next/head';
 import Container from 'components/Container';
 import TemplateArchive from 'Templates/Archive';
 
@@ -9,6 +10,9 @@ function Blog({ posts, pagination }) {
 
   return (
     <>
+    <Head>
+      <title>Blog - TASD Project</title>
+    </Head>
     <Container>
       <h1>Blog</h1>
     </Container>
