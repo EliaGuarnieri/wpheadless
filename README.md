@@ -9,6 +9,30 @@ npm run dev
 # or
 yarn dev
 ```
+```
+.
+├── .next
+├── node_modules
+├── public
+│   ├── image             # Immagini statiche
+│   └── ...
+├── src
+│   ├── components        # I componenti
+│   ├── data              # Le query GraphQL
+│   ├── hooks             # I custom hook
+│   ├── Layout
+│   ├── lib               # Le utilities functions
+│   └── pages             # Le routes
+│	   ├── authors
+│	   ├── categories
+│	   ├── posts
+│	   ├── _app.js          # Entry point dellapp
+│	   └── index.jsx        # Home page
+├── styles                # Gli stili globali e delle pagine
+├── Templates             # I template
+├── next.config.js        # File di configurazione di Next
+└── ...
+```
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
