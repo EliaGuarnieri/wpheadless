@@ -105,6 +105,12 @@ abbr[title] {
   text-decoration: underline dotted $color-primary;
 }
 
+code:not([class]) {
+  background: $color-gray-0;
+  border-radius: 0.6rem;
+  padding: .2rem .6rem;
+}
+
 img:not([class]) {
   border-radius: $border-radius;
 }
