@@ -57,7 +57,7 @@ const Home = () => {
             />
           </div>
           <p>
-            I Blog sono un ottimo strumento per diffondere le idee, raccontare storie e presentare prodotti. Quando si parla di Blog la prima cosa che viene in mente è <a href="https://it.WordPress.org/about/">WordPress</a>, un <abbr title="Content Management System">CMS</abbr> open source <strong>molto potente, facile da utilizzare e conosciuto</strong>. Per quanto WordPress sia indubbiamente un grande strumento, i siti creati con esso risultano molto lenti soprattutto se non si fa attenzione e se si installano centinaia di plugin!
+            I Blog sono un ottimo strumento per diffondere le idee, raccontare storie e presentare prodotti. Quando si parla di Blog la prima cosa che viene in mente è <a href="https://it.WordPress.org/about/">WordPress</a>, un <abbr title="Content Management System">CMS</abbr> open source <strong>molto potente, facile da utilizzare e conosciuto</strong>. Per quanto WordPress sia indubbiamente un grande strumento, i siti creati con esso possono risultare molto lenti soprattutto se non si fa attenzione e se si installano centinaia di plugin!
           </p>
           <p>
             Negli ultimi anni sta prendendo sempre più piede lo sviluppo di <abbr title="Single Page Applications">SPA</abbr>, siti web che presentano un&apos;esperienza molto simile a quella di un&apos;applicazione nativa (per dispositivi mobili o desktop), riscrivendo il contenuto delle pagine dinamicamente solo nei punti in cui avviene una modifica. Questa tecnica fa si che <strong>le SPA siano molto più rapide di un sito web sviluppato con WordPress</strong> e la velocità è uno degli aspetti chiave per la <abbr title="Search Engine Optimizations">SEO</abbr>.
@@ -252,7 +252,7 @@ export async function getStaticProps({ params = {} } = {}) {
   const { posts, pagination } = await getPaginatedPosts(allPosts.posts, params?.page);
 
   // Ritornando { props: { posts, pagination}}, il componente Blog riceve
-  // posts e pagination durante la build
+  // 'posts' e 'pagination' durante la build
   return {
     props: {
       posts,
@@ -368,7 +368,7 @@ Router.events.on("routeChangeStart", routeChange );`
           <h2>What&apos;s next?</h2>
 
           <p>
-            WordPress, grazie anche a <a href="https://yoast.com/WordPress/plugins/seo/">Yoas SEO</a>, fa un lavoro eccellente per i motori di ricerca. Sfruttare questo lavoro in questa applicazione è sicuramente il primo passo per uno sviluppo futuro. Yoast infatti, grazie a un plugin, espone su GraphQL tutte le informazioni della SEO impostate su WordPress.
+            WordPress, grazie anche a <a href="https://yoast.com/WordPress/plugins/seo/">Yoas SEO</a>, fa un lavoro eccellente per i motori di ricerca. Sfruttare questo lavoro in questa applicazione è sicuramente il primo passo per uno sviluppo futuro. Yoast infatti, grazie a un <a href="https://wordpress.org/plugins/add-wpgraphql-seo/">plugin</a>, espone su GraphQL tutte le informazioni della SEO impostate su WordPress.
           </p>
 
           <p>
