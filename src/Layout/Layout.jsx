@@ -1,5 +1,5 @@
 import { useRouter } from 'next/router'
-import { useRef, useState } from 'react'
+import { useRef, useState, useEffect } from 'react'
 import { ScrollContext } from 'context'
 
 import Navbar from 'components/Navbar'
@@ -14,6 +14,10 @@ const Layout = ({children}) => {
   const router = useRouter()
   const scrollbars = useRef()
   const [scrolled, setScrolled] = useState(false)
+
+  useEffect(() => {
+    setScrolled(false)
+  },[router])
 
   const checkScrollPosition = (values) => {
     if(values.top < 0.05) {
