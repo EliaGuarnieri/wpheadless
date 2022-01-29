@@ -28,18 +28,18 @@ const Home = () => {
 
       <Container>
         <div className={styles.title}>
-          <h1>Creare un blog con Next.js e Wordpress come headless CMS</h1>
+          <h1>Creare un blog con Next.js e WordPress come headless CMS</h1>
           <p>Ovvero come perdere la testa e ritrovarsi in una SPA</p>
         </div>
 
         <Section>
           <h2>tl;dr</h2>
           <p>
-            In questa pagina ho dato un breve <a href="#" onClick={(e) => scrollTo(e, '#incipit')}>accenno</a> ai pregi e i difetti di Wordpress e li ho messi a confronto con Next.js; ho esposto la struttura del <a href="#" onClick={(e) => scrollTo(e, '#project')}>progetto</a>; ho <a href="#" onClick={(e) => scrollTo(e, '#hosting')}>indicato</a> le piattaforme di hosting utilizzate e come ho risolto il problema dell&apos;<a href="#" onClick={(e) => scrollTo(e, '#updating')}>aggiornamento dei contenuti</a>.
-            Infine ho elencato qualche possibile <a href="#" onClick={(e) => scrollTo(e, '#next')}>sviluppo futuro</a>
+            In questa pagina ho fatto un breve <a href="#" onClick={(e) => scrollTo(e, '#incipit')}>accenno</a> ai pregi e i difetti di WordPress e li ho messi a confronto con Next.js; ho presentato la struttura del <a href="#" onClick={(e) => scrollTo(e, '#project')}>progetto</a>; ho <a href="#" onClick={(e) => scrollTo(e, '#hosting')}>indicato</a> le piattaforme di hosting utilizzate e come ho risolto il problema dell&apos;<a href="#" onClick={(e) => scrollTo(e, '#updating')}>aggiornamento dei contenuti</a>.
+            Infine ho elencato qualche possibile <a href="#" onClick={(e) => scrollTo(e, '#next')}>sviluppo futuro</a>.
           </p>
           <p>
-            Infondo è possibile trovare una <a href="#" onClick={(e) => scrollTo(e, '#sources')}>lista</a> dei pacchetti più importanti utilizzati e le fonti utilizzate.
+            In fondo è possibile trovare una <a href="#" onClick={(e) => scrollTo(e, '#sources')}>lista</a> dei pacchetti più importanti utilizzati, le fonti e i link utili.
           </p>
 
           <p>
@@ -57,10 +57,10 @@ const Home = () => {
             />
           </div>
           <p>
-            I Blog sono un ottimo strumento per diffondere le idee, raccontare storie e presentare prodotti. Quando si parla di Blog la prima cosa che viene in mente è <a href="https://it.wordpress.org/about/">Wordpress</a>, un <abbr title="Content Management System">CMS</abbr> open source <strong>molto potente, facile da utilizzare e conosciuto</strong>. Per quanto Wordpress sia indubbiamente un grande strumento i siti creati con esso risultano molto lenti soprattutto se non si fa attenzione e si installano centinaia di plugin!
+            I Blog sono un ottimo strumento per diffondere le idee, raccontare storie e presentare prodotti. Quando si parla di Blog la prima cosa che viene in mente è <a href="https://it.WordPress.org/about/">WordPress</a>, un <abbr title="Content Management System">CMS</abbr> open source <strong>molto potente, facile da utilizzare e conosciuto</strong>. Per quanto WordPress sia indubbiamente un grande strumento, i siti creati con esso risultano molto lenti soprattutto se non si fa attenzione e se si installano centinaia di plugin!
           </p>
           <p>
-            Negli ultimi anni sta prendendo sempre più piede lo sviluppo di <abbr title="Single Page Applications">SPA</abbr>, siti web che presentano un&apos;esperienza molto simile a quella di un&apos;applicazione nativa (per dispositivi mobili o desktop), riscrivendo il contenuto delle pagine dinamicamente solo nei punti in cui avviene una modifica. Questa tecnica fa si che <strong>le SPA siano molto più rapide di un sito web sviluppato con Wordpress</strong> e la velocità è uno degli aspetti chiave per la <abbr title="Search Engine Optimizations">SEO</abbr>.
+            Negli ultimi anni sta prendendo sempre più piede lo sviluppo di <abbr title="Single Page Applications">SPA</abbr>, siti web che presentano un&apos;esperienza molto simile a quella di un&apos;applicazione nativa (per dispositivi mobili o desktop), riscrivendo il contenuto delle pagine dinamicamente solo nei punti in cui avviene una modifica. Questa tecnica fa si che <strong>le SPA siano molto più rapide di un sito web sviluppato con WordPress</strong> e la velocità è uno degli aspetti chiave per la <abbr title="Search Engine Optimizations">SEO</abbr>.
           </p>
           <p>
             La libreria più famosa per semplificare la creazione di SPA è senza dubbio <a href="https://it.reactjs.org/">React</a>. Ma per creare da zero un&apos;applicazione web con React bisogna considerare diversi aspetti:
@@ -78,10 +78,10 @@ const Home = () => {
             Per quanto riguarda la componente CMS esistono svariate soluzioni da abbinare a Next.js. Una lista non esaustiva di CMS da abbinare può essere: <a href="https://www.datocms.com/">DatoCMS</a>, <a href="https://buttercms.com/">ButterCMS</a>, <a href="https://strapi.io/">Strapi</a>, ...
           </p>
           <p>
-            A tutti questi CMS manca però una cosa importantissima: <strong>non sono Wordpress!</strong> Può sembrare una banalità, ma il fatto che Wordpress sia in circolazione da così tanto tempo fa sì che bene o male anche persone meno tecniche sappiano come produrre contenuti con esso.
+            A tutti questi CMS manca però una cosa importantissima: <strong>non sono WordPress!</strong> Può sembrare una banalità, ma il fatto che WordPress sia in circolazione da così tanto tempo fa sì che bene o male anche persone con meno competenze tecniche sappiano come produrre contenuti con esso.
           </p>
           <p>
-            Quindi, <strong>perché non tagliare la testa a Wordpress?</strong>
+            Quindi, <strong>perché non tagliare la testa a WordPress?</strong>
           </p>
 
           <h3>Tagliategli la testa!</h3>
@@ -94,11 +94,11 @@ const Home = () => {
           </div>
 
           <p>
-            Un Headless CMS è un CMS che si occupa solamente della gestione dei contenuti demandando la loro visualizzazione ad altri. Wordpress supporta una modalità headless esponendo delle <a href='https://developer.wordpress.org/rest-api/'>REST API</a> <em>out of the box</em>, ma installando <a href="https://wordpress.org/plugins/wp-graphql/">WPGraphQL plugin</a> è possibile effettuare delle query ai dati di Wordpress con <a href="https://graphql.org/">GraphQL</a>.
+            Un Headless CMS è un CMS che si occupa solamente della gestione dei contenuti demandando la loro visualizzazione ad altri. WordPress supporta una modalità headless esponendo delle <a href='https://developer.WordPress.org/rest-api/'>REST API</a> <em>out of the box</em>, ma installando <a href="https://WordPress.org/plugins/wp-graphql/">WPGraphQL plugin</a> è possibile effettuare delle query ai dati di WordPress con <a href="https://graphql.org/">GraphQL</a>.
           </p>
 
           <p>
-            E questo è davvero tutto quello che è necessario fare per utilizzare Wordpress come headless CMS!
+            E questo è davvero tutto quello che è necessario fare per utilizzare WordPress come headless CMS!
           </p>
 
           <h3>L&apos;unione fa la forza</h3>
@@ -111,12 +111,43 @@ const Home = () => {
           </div>
 
           <p>
-            Completata la parte di Wordpress è tempo di passare a Next.js. Prendendo spunto dal fantastico repository <a href="https://github.com/colbyfayock/next-wordpress-starter">Next.js WordPress Starter</a> è possibile partire con uno scheletro di applicazione potenzialmente già pronto all&apos;uso.
+            Completata la parte di WordPress è tempo di passare al frontend e quindi alla visualizzazione delle risorse create con WordPress. Next.js è un ottimo strumento per la creazione di web application.
+            Prendendo spunto dal fantastico repository <a href="https://github.com/colbyfayock/next-WordPress-starter">Next.js WordPress Starter</a> è possibile partire con uno scheletro di applicazione potenzialmente già pronto all&apos;uso. Partendo da questa base ho sviluppato il mio progetto.
           </p>
 
+          <Code language='bash' style={atomDark}>
+{
+`// Bash
+yarn create next-app -e https://github.com/colbyfayock/next-wordpress-starter wpheadless
+# or
+npx create-next-app -e https://github.com/colbyfayock/next-wordpress-starter wpheadless`
+}
+          </Code>
+
           <p>
-            Completata la parte di Wordpress è tempo di passare a Next.js. Prendendo spunto dal fantastico repository <a href="https://github.com/colbyfayock/next-wordpress-starter">Next.js WordPress Starter</a> è possibile partire con uno scheletro di applicazione potenzialmente già pronto all&apos;uso. Partendo da questa base ho sviluppato il mio progetto.
+            Con questo comando si crea una Next App a partire dal repository. Prima di iniziare a personalizzare il progetto è necessario connettere WordPress alla Next App. Per fare questo basta creare il file <code>.env.local</code> nella root del progetto e inserire:
           </p>
+
+          <Code language='textile' style={atomDark}>
+{
+`// .env.local
+WORDPRESS_GRAPHQL_ENDPOINT="[URL di WordPress]/graphql"`
+}
+          </Code>
+
+          <p>e richiamare nel file di configurazione <code>next.config.js</code> la variabile:</p>
+
+          <Code language='javascript' style={atomDark}>
+{
+`module.exports = {
+  ...
+
+  env: {
+    WORDPRESS_GRAPHQL_ENDPOINT: process.env.WORDPRESS_GRAPHQL_ENDPOINT
+  }
+}`
+}
+          </Code>
         </Section>
 
         <Section id="project">
@@ -128,11 +159,11 @@ const Home = () => {
 
           <Code language='textile' style={atomDark}>
 {
-`.
+`📁
 ├── .next
 ├── node_modules
 ├── public
-│   ├── image             # Immagini statiche
+│   ├── image            # Immagini statiche
 │   └── ...
 ├── src
 │   ├── components        # I componenti
@@ -144,7 +175,7 @@ const Home = () => {
 │       ├── authors
 │       ├── categories
 │       ├── posts
-│       ├── _app.js       # Entry point dellapp
+│       ├── _app.js       # Entry point dell'app
 │       └── index.jsx     # Home page
 ├── styles                # Gli stili globali e delle pagine
 ├── Templates             # I template
@@ -155,10 +186,10 @@ const Home = () => {
         </Section>
 
         <Section>
-          <h3> I componenti</h3>
+          <h3>I componenti</h3>
 
           <p>
-            Ho cercato di rendere i componenti più isolati possibile così da poterli riutilizzare in un altri progetti futuri. Ho seguito il seguente pattern per la struttura della cartella di ogni componente
+            Ho cercato di rendere i componenti più isolati possibile così da poterli riutilizzare in un altri progetti futuri. Ho seguito il seguente pattern per la struttura della cartella di ogni componente:
           </p>
 
             <Code language='textile' style={atomDark}>
@@ -187,10 +218,10 @@ import TheComponent from 'components/TheComponent/TheComponent'
         </Section>
 
         <Section>
-          <h3>Estrazione dei dati da Wordpress</h3>
+          <h3>Estrazione dei dati da WordPress</h3>
 
           <p>
-            Come detto nell&apos;incipit i dati da Wordpress vengono estratti con GraphQL. Per semplificare la gestione delle chiamate ho utilizzato la libreria <a href='https://www.apollographql.com/docs/react/'>Apollo Client</a>.
+            Come detto nell&apos;incipit i dati da WordPress vengono estratti con GraphQL. Per semplificare la gestione delle chiamate ho utilizzato la libreria <a href='https://www.apollographql.com/docs/react/'>Apollo Client</a>.
           </p>
 
           <p>
@@ -198,7 +229,7 @@ import TheComponent from 'components/TheComponent/TheComponent'
           </p>
 
           <p>
-            Il data fetching vero e proprio avviene a livello di pagina con le funzioni <a href="https://nextjs.org/docs/basic-features/data-fetching/get-static-paths">getStaticPaths</a>, che genera le routes statiche per tutte le risorse estrarre da Wordpress, e <a href="https://nextjs.org/docs/basic-features/data-fetching/get-static-props">getStaticProps</a>, che estrae i dati richiesti. Entrambe le funzioni vengono chiamate in fase di build.
+            Il data fetching vero e proprio avviene a livello di pagina con le funzioni <a href="https://nextjs.org/docs/basic-features/data-fetching/get-static-paths">getStaticPaths</a>, che genera le routes statiche per tutte le risorse estrarre da WordPress, e <a href="https://nextjs.org/docs/basic-features/data-fetching/get-static-props">getStaticProps</a>, che estrae le risorse e le passa come props al componente. Entrambe le funzioni vengono chiamate in fase di build. Queste due funzioni sono il cuore del progetto e quindi mi sembra doveroso approfondirne la struttura:
           </p>
 
           <Code language='jsx' style={atomDark} showLineNumbers>
@@ -208,9 +239,20 @@ import TheComponent from 'components/TheComponent/TheComponent'
  * @see src/pages/posts/page/[page].jsx
  */
 
+const Blog = ({ posts, pagination }) => {
+  // Render posts
+}
+
+// Questa funzione viene chiamata durante la build lato server.
+// Non verrà mai chiamata lato client, è quindi possibile interagire con il database
 export async function getStaticProps({ params = {} } = {}) {
+
+  // Chiama la funzione che si occupa di contattare l'API endpoint di WP
   const allPosts = await getAllPosts();
   const { posts, pagination } = await getPaginatedPosts(allPosts.posts, params?.page);
+
+  // Ritornando { props: { posts, pagination}}, il componente Blog riceve
+  // posts e pagination durante la build
   return {
     props: {
       posts,
@@ -222,17 +264,64 @@ export async function getStaticProps({ params = {} } = {}) {
   };
 }
 
+// Questa funzione viene chiamata durante la build lato server.
 export async function getStaticPaths() {
+
+  // Chiama la funzione che si occupa di contattare l'API endpoint di WP
+  // per ottenere tutti i post e il numero di pagine.
   const { posts } = await getAllPosts();
   const pagesCount = await getPagesCount(posts);
+
+  // Definisce i path che vogliamo pre-renderizzare a partire dai post ottenuti
+  // e li passa come parametri alla route dinamica
   const paths = [...new Array(pagesCount)].map((_, i) => {
     return { params: { page: String(i + 1) } };
   });
   return {
     paths,
-    fallback: false,
+    fallback: false, // Tutti le altre routes ritornano 404
   };
 }`
+}
+          </Code>
+        </Section>
+
+        <Section>
+          <h3>Problematiche incontrate e risolte</h3>
+          <p>
+            Durante la transizione delle pagine la pagina in uscita perdeva gli stili. Indagando sulla problematica ho individuato il problema nel fatto che i moduli scss venivano scollegati prima della fine della transizione. Facendo un paio di ricerche sono incappato in una <a href="https://github.com/vercel/next.js/issues/17464">issue</a> ancora open nel Repository di Next nella quale viene proposto un <em>workaround</em> temporaneo fino alla risoluzione del problema.
+          </p>
+
+          <Code language='jsx' style={atomDark} showLineNumbers>
+{
+`/*
+ * Workaround transizione delle pagine
+ * @see src/pages/_app.js per vedere come è stato implementato nel progetto
+ *
+ * @link https://github.com/vercel/next.js/issues/17464#issuecomment-711330281
+ */
+
+// Add that code to _app.tsx / _app.jsx
+
+import Router from "next/router";
+
+const routeChange = () => {
+  // Temporary fix to avoid flash of unstyled content
+  // during route transitions. Keep an eye on this
+  // issue and remove this code when resolved:
+  // https://github.com/vercel/next.js/issues/17464
+
+  const tempFix = () => {
+    const allStyleElems = document.querySelectorAll('style[media="x"]');
+    allStyleElems.forEach((elem) => {
+      elem.removeAttribute("media");
+    });
+  };
+  tempFix();
+};
+
+Router.events.on("routeChangeComplete", routeChange );
+Router.events.on("routeChangeStart", routeChange );`
 }
           </Code>
         </Section>
@@ -241,7 +330,7 @@ export async function getStaticPaths() {
           <h2>Hosting dell&apos;applicazione</h2>
 
           <p>
-            Wordpress è stato messo online su altervista:
+            WordPress è stato messo online su altervista:
           </p>
 
           <p>
@@ -251,7 +340,7 @@ export async function getStaticPaths() {
           </p>
 
           <p>
-            L&apos;applicazione creata con Next.js è stata messa online su <a href="https://www.netlify.com/">Netlify</a> che permette l&apos;hosting direttamente da repository e, automatizzando la fase di build, pubblica i contenuti staticamente tramite <abbr title="Content Delivery Network">CDN</abbr>.
+            L&apos;applicazione creata con Next.js è stata messa online su <a href="https://www.netlify.com/">Netlify</a> che permette l&apos;hosting direttamente da repository e, automatizzando la fase di build, pubblica i contenuti staticamente tramite <abbr title="Content Delivery Network">CDN</abbr>. L&apos;unica accortezza è stata quella di riportare l&apos;URL salvato nella variabile d&apos;ambiente nell&apos;<a href='https://docs.netlify.com/configure-builds/environment-variables/'>Build environment variables</a> di Netlify per renderla disponibile durante la build e permettere la connessione all&apos;endpoint di WordPress.
           </p>
         </Section>
 
@@ -259,11 +348,11 @@ export async function getStaticPaths() {
           <h2>Aggiornamento dei contenuti</h2>
 
           <p>
-            Essendo i contenuti scaricati in fase di build e inseriti in pagine statiche secondo l&apos;approccio <abbr title="Javascript API Markup">JAMStack</abbr> sarebbe necessario rilanciare una build ogni volta che viene modificato lo stato di un post su Wordpress.
+            Essendo i contenuti scaricati in fase di build e inseriti in pagine statiche secondo l&apos;approccio <abbr title="Javascript API Markup">JAMStack</abbr> sarebbe necessario rilanciare una build ogni volta che viene modificato lo stato di un post su WordPress.
           </p>
 
           <p>
-            Per ovviare a questa limitazione ho installato su Wordpress <a href='https://it.wordpress.org/plugins/wp-webhooks/'>WP Webhooks</a> che permette di impostare dei <em>Trigger</em> che, a seguito di determinati eventi, inviano dati a servizi esterni.
+            Per ovviare a questa limitazione ho installato su WordPress <a href='https://it.WordPress.org/plugins/wp-webhooks/'>WP Webhooks</a> che permette di impostare dei <em>Trigger</em> che, a seguito di determinati eventi, inviano dati a servizi esterni.
           </p>
 
           <p>
@@ -279,11 +368,11 @@ export async function getStaticPaths() {
           <h2>What&apos;s next?</h2>
 
           <p>
-            Wordpress, grazie anche a <a href="https://yoast.com/wordpress/plugins/seo/">Yoas SEO</a>, fa un lavoro eccellente per i motori di ricerca. Sfruttare questo lavoro in questa applicazione è sicuramente il primo passo per uno sviluppo futuro. Yoast infatti, grazie a un plugin, espone su GraphQL tutte le informazioni della SEO impostate su Wordpress.
+            WordPress, grazie anche a <a href="https://yoast.com/WordPress/plugins/seo/">Yoas SEO</a>, fa un lavoro eccellente per i motori di ricerca. Sfruttare questo lavoro in questa applicazione è sicuramente il primo passo per uno sviluppo futuro. Yoast infatti, grazie a un plugin, espone su GraphQL tutte le informazioni della SEO impostate su WordPress.
           </p>
 
           <p>
-            In questo momento le due piattaforme (Wordpress e Next) sono slegate. Se faccio l&apos;anteprima di un articolo da Wordpress non lo visualizzo sul frontend sviluppato con Next, ma in quello di Wordpress. Grazie alla <a href="https://nextjs.org/docs/advanced-features/preview-mode">Preview Mode</a> di Next dovrebbe essere possibile integrare meglio WordPress e Next per creare ancora di più un&apos;esperienza senza soluzione di continuità tra la produzione e la visualizzazione dei contenuti
+            In questo momento le due piattaforme (WordPress e Next) sono slegate. Se faccio l&apos;anteprima di un articolo da WordPress non lo visualizzo sul frontend sviluppato con Next, ma in quello di WordPress. Grazie alla <a href="https://nextjs.org/docs/advanced-features/preview-mode">Preview Mode</a> di Next dovrebbe essere possibile integrare meglio WordPress e Next per creare ancora di più un&apos;esperienza senza soluzione di continuità tra la produzione e la visualizzazione dei contenuti
           </p>
 
         </Section>
@@ -303,13 +392,13 @@ export async function getStaticPaths() {
           <h3>Fonti</h3>
           <ul>
             <li>Articolo che a guidato il progetto, <a href="https://next-wordpress-starter.spacejelly.dev/posts/how-to-create-a-headless-wordpress-blog-with-next-js-wordpress-starter/">How to Create a Headless WordPress Blog with Next.js WordPress Starter</a>.</li>
-            <li>Repository con da cui sono partito, <a href="https://github.com/colbyfayock/next-wordpress-starter">@colbyfayock/next-wordpress-starter</a>.</li>
+            <li>Repository con da cui sono partito, <a href="https://github.com/colbyfayock/next-WordPress-starter">@colbyfayock/next-WordPress-starter</a>.</li>
           </ul>
 
           <h3>Link utili</h3>
           <ul>
             <li>Repository con il codice sorgente, <a href="https://github.com/EliaGuarnieri/wpheadless">@EliaGuarnieri/wpheadless</a>.</li>
-            <li>Accesso all&apos;Admin di Wordpress, <a href="https://headlesswp.altervista.org/wp-admin">Altervista</a>.</li>
+            <li>Accesso all&apos;Admin di WordPress, <a href="https://headlesswp.altervista.org/wp-admin">Altervista</a>.</li>
           </ul>
         </Section>
 
