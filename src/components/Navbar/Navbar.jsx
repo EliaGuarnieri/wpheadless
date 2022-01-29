@@ -23,6 +23,7 @@ const Navbar = () => {
                 width={40}
                 height={40}
                 alt="Logo"
+                priority
               />
               TASD Project
             </a>
