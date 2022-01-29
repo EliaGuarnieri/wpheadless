@@ -94,7 +94,7 @@ const Home = () => {
           </div>
 
           <p>
-            Un Headless CMS è un CMS che si occupa solamente della gestione dei contenuti demandando la loro visualizzazione ad altri. WordPress supporta una modalità headless esponendo delle <a href='https://developer.WordPress.org/rest-api/'>REST API</a> <em>out of the box</em>, ma installando <a href="https://WordPress.org/plugins/wp-graphql/">WPGraphQL plugin</a> è possibile effettuare delle query ai dati di WordPress con <a href="https://graphql.org/">GraphQL</a>.
+            Un Headless CMS è un CMS che si occupa solamente della gestione dei contenuti demandando la loro visualizzazione ad altri. WordPress supporta una modalità headless esponendo delle <a href='https://developer.WordPress.org/rest-api/'>REST API</a> <em>out of the box</em>, ma installando <a href="https://WordPress.org/plugins/wp-graphql/">WPGraphQL plugin</a> è possibile effettuare delle queries ai dati di WordPress con <a href="https://graphql.org/">GraphQL</a>.
           </p>
 
           <p>
@@ -167,7 +167,7 @@ WORDPRESS_GRAPHQL_ENDPOINT="[URL di WordPress]/graphql"`
 │   └── ...
 ├── src
 │   ├── components        # I componenti
-│   ├── data              # Le query GraphQL
+│   ├── data              # Le queries GraphQL
 │   ├── hooks             # I custom hook
 │   ├── Layout
 │   ├── lib               # Le utilities functions
