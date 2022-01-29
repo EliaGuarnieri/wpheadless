@@ -1,3 +1,6 @@
+import { useContext } from 'react'
+import { ScrollContext } from 'context'
+
 import { Prism as Code } from 'react-syntax-highlighter'
 import atomDark from 'react-syntax-highlighter/dist/cjs/styles/prism/atom-dark'
 
@@ -11,14 +14,20 @@ import styles from 'styles/Pages/Home.module.scss'
 
 const Home = () => {
 
+  const scrollbars = useContext(ScrollContext)
+
   const scrollTo = (e, target) => {
     e.preventDefault()
 
     const anchorTarget = document.querySelector(target)
 
     if(!anchorTarget) return
-    anchorTarget.scrollIntoView({ behavior: 'smooth', block: 'start' })
+
+    const distance = anchorTarget.getBoundingClientRect().top - 60
+    scrollbars.current.view.scroll({top: distance, behavior: 'smooth'})
   }
+
+  const Anchor = ({to, children}) => <a href="#" onClick={(e) => scrollTo(e, to)}>{children}</a>
 
   return (
     <>
@@ -35,11 +44,11 @@ const Home = () => {
         <Section>
           <h2>tl;dr</h2>
           <p>
-            In questa pagina ho fatto un breve <a href="#" onClick={(e) => scrollTo(e, '#incipit')}>accenno</a> ai pregi e i difetti di WordPress e li ho messi a confronto con Next.js; ho presentato la struttura del <a href="#" onClick={(e) => scrollTo(e, '#project')}>progetto</a>; ho <a href="#" onClick={(e) => scrollTo(e, '#hosting')}>indicato</a> le piattaforme di hosting utilizzate e come ho risolto il problema dell&apos;<a href="#" onClick={(e) => scrollTo(e, '#updating')}>aggiornamento dei contenuti</a>.
-            Infine ho elencato qualche possibile <a href="#" onClick={(e) => scrollTo(e, '#next')}>sviluppo futuro</a>.
+            In questa pagina ho fatto un breve <Anchor to='#incipit'>accenno</Anchor> ai pregi e i difetti di WordPress e li ho messi a confronto con Next.js; ho presentato la struttura del <Anchor to='#project'>progetto</Anchor>; ho <Anchor to='#hosting'>indicato</Anchor> le piattaforme di hosting utilizzate e come ho risolto il problema dell&apos;<Anchor to="#updating">aggiornamento dei contenuti</Anchor>.
+            Infine ho elencato qualche possibile <Anchor to="#next">sviluppo futuro</Anchor>.
           </p>
           <p>
-            In fondo è possibile trovare una <a href="#" onClick={(e) => scrollTo(e, '#sources')}>lista</a> dei pacchetti più importanti utilizzati, le fonti e i link utili.
+            In fondo è possibile trovare una <Anchor to="#sources">lista</Anchor> dei pacchetti più importanti utilizzati, le fonti e i link utili.
           </p>
 
           <p>
@@ -167,6 +176,7 @@ WORDPRESS_GRAPHQL_ENDPOINT="[URL di WordPress]/graphql"`
 │   └── ...
 ├── src
 │   ├── components        # I componenti
+│   ├── context           # I context
 │   ├── data              # Le queries GraphQL
 │   ├── hooks             # I custom hook
 │   ├── Layout
