@@ -6,7 +6,7 @@ import TemplateArchive from 'Templates/Archive';
 
 //import styles from 'styles/Pages/Blog.module.scss'
 
-function Blog({ posts, pagination }) {
+const Blog = ({ posts, pagination }) => {
 
   return (
     <>
