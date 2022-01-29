@@ -10,6 +10,7 @@ const Scrollbars = forwardRef((props, ref) => (
       renderThumbVertical={(props) => <div {...props} className={styles.thumb} />}
       hideTracksWhenNotNeeded={true}
       universal={true}
+      {...props}
     >
       { props.children }
     </ReactScrollbars>
