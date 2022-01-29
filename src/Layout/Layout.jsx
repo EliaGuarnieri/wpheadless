@@ -1,5 +1,6 @@
 import { useRouter } from 'next/router'
-import { useRef } from 'react'
+import { useRef, useState } from 'react'
+import { ScrollContext } from 'context'
 
 import Navbar from 'components/Navbar'
 import Transition from 'components/Transition'
@@ -12,22 +13,29 @@ import styles from './Layout.module.scss'
 const Layout = ({children}) => {
   const router = useRouter()
   const scrollbars = useRef()
+  const [scrolled, setScrolled] = useState(false)
 
-  const handleScroll = () => {
-    scrollbars.current.view.scroll({top: 0, behavior: 'smooth'})
+  const checkScrollPosition = (values) => {
+    if(values.top < 0.05) {
+      setScrolled(false)
+    } else {
+      setScrolled(true)
+    }
   }
 
   return (
-    <div className={styles.layoutContainer}>
-      <Navbar />
-      <Transition location={router.asPath}>
-        <Scrollbars ref={scrollbars}>
-          {children}
-          <Footer />
-        </Scrollbars>
-        <ToTop handleScroll={handleScroll}/>
-      </Transition>
-    </div>
+    <ScrollContext.Provider value={scrollbars}>
+      <div className={styles.layoutContainer}>
+        <Navbar />
+        <Transition location={router.asPath}>
+          <Scrollbars ref={scrollbars} onScrollFrame={(values) => checkScrollPosition(values)}>
+            {children}
+            <Footer />
+          </Scrollbars>
+          {scrolled && (<ToTop />)}
+        </Transition>
+      </div>
+    </ScrollContext.Provider>
   )
 }
 
